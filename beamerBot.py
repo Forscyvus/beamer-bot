@@ -1,6 +1,8 @@
 #! /usr/bin/python
 
-import tweepy
+import tweepy, sqlite3
+
+
 
 with open('keyz.txt','r') as f:
     consumerKey = f.readline().strip()
@@ -13,4 +15,12 @@ auth.set_access_token(accessToken, accessTokenSecret)
 
 api = tweepy.API(auth)
 
-api.update_status("test post please ignore")
+db = sqlite3.connect('db/db')
+
+cursor = db.cursor()
+
+
+
+
+
+
