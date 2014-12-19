@@ -1,6 +1,6 @@
 #! /usr/bin/python
 
-import tweepy, sqlite3, re
+import tweepy, sqlite3, re, random
 
 
 
@@ -19,8 +19,10 @@ db = sqlite3.connect('db/db')
 
 cursor = db.cursor()
 
+currentFriend = ""
+
 def initializeDB():
-    cursor.execute("CREATE TABLE Tweets(tweetId INTEGER, authorId INTEGER, text TEXT)")
+    cursor.execute("CREATE TABLE Tweets(tweetId INTEGER, authorId INTEGER, text TEXT, wordCount INT)")
     db.commit()
 
 def updateTweetsForUser(userId):
@@ -41,11 +43,11 @@ def updateTweetsForUser(userId):
                 
                 tweet.text = re.sub('@','@.',tweet.text)
 
-                query = """INSERT INTO Tweets(tweetId, authorId, text)
-                VALUES(?,?,?)
+                query = """INSERT INTO Tweets(tweetId, authorId, text, wordCount)
+                VALUES(?,?,?,?)
                 """
-                cursor.execute(query, (tweet.id, userId, tweet.text))
-                print tweet.author.screen_name, tweet.text
+                cursor.execute(query, (tweet.id, userId, tweet.text, len(tweet.text.split()) ))
+                print tweet.author.screen_name, tweet.text, len(tweet.text.split())
                 print "--------------"
 
         #get more tweets
@@ -55,12 +57,58 @@ def updateTweetsForUser(userId):
     db.commit()
 
 def updateTweets():
-    friends = api.friends_ids(api.me().id)
+    friends = api.friends_ids(api.me().id) #everyone beamerbot follows
     for friendId in friends:
         updateTweetsForUser(friendId)
 
+def generateTweet():
+    global currentFriend
+    friends = api.friends_ids(api.me().id) #gets list of userIds beamerbot is following
+    friend = api.get_user(random.choice(friends))
+    currentFriend = friend.screen_name
+    
+    tweet = ""
+    currentLength = 0
+    nextChunk = random.randint(2,7)
+    stillBuilding = True
+
+    while(stillBuilding):
+        query = """SELECT text FROM tweets
+                    WHERE authorId = ?
+                      AND wordCount >= ?
+                 ORDER BY RANDOM() LIMIT 1"""
+        cursor.execute(query, (friend.id, currentLength))
+        sourceTweet = cursor.fetchone()[0].split() #the text of the fetched tweet
+
+        if (len(sourceTweet) < currentLength + nextChunk):
+            #finish out and stop
+            stillBuilding = False
+            sourceTweet = sourceTweet[currentLength:]
+            for word in sourceTweet:
+                tweet = tweet + word + ' '
+            tweet = tweet.strip()
+        else:
+            #build and continue
+            sourceTweet = sourceTweet[currentLength:currentLength+nextChunk]
+            for word in sourceTweet:
+                tweet = tweet + word + ' '
+            currentLength += nextChunk
+            nextChunk = random.randint(2,7)
+
+        if (len(tweet) > 140):
+            #start over
+            tweet = ""
+            currentLength = 0
+            nextChunk = random.randint(2,7)
+            stillBuilding = True
+
+    print currentFriend, tweet
+
+
+
 #initializeDB()
-updateTweets()
+#updateTweets()
+#generateTweet()
 
 
     
