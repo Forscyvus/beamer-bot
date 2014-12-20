@@ -19,7 +19,11 @@ db = sqlite3.connect('db/db')
 
 cursor = db.cursor()
 
+roundOver = False
+alreadyGuessed = []
 currentFriend = ""
+currentTweetId = 0
+beamerBotId = 2865039405
 
 def initializeDB():
     cursor.execute("CREATE TABLE Tweets(tweetId INTEGER, authorId INTEGER, text TEXT, wordCount INT)")
@@ -57,16 +61,20 @@ def updateTweetsForUser(userId):
     db.commit()
 
 def updateTweets():
-    friends = api.friends_ids(api.me().id) #everyone beamerbot follows
+    friends = api.friends_ids(beamerBotId) #everyone beamerbot follows
     for friendId in friends:
         updateTweetsForUser(friendId)
 
 def generateTweet():
-    global currentFriend
-    friends = api.friends_ids(api.me().id) #gets list of userIds beamerbot is following
+    global currentFriend, currentTweetId, alreadyGuessed, roundOver
+    friends = api.friends_ids(beamerBotId) #gets list of userIds beamerbot is following
     friend = api.get_user(random.choice(friends))
-    currentFriend = friend.screen_name
+    #currentFriend = friend.screen_name
+    currentFriend = "BreetzTweetz"
+    alreadyGuessed = []
+    roundOver = False
     
+
     tweet = ""
     currentLength = 0
     nextChunk = random.randint(2,7)
@@ -102,16 +110,68 @@ def generateTweet():
             nextChunk = random.randint(2,7)
             stillBuilding = True
 
+    #STATS
     print currentFriend, tweet
 
+def processMentions():
+    global currentFriend, currentTweetId, alreadyGuessed, roundOver
+    friends = api.friends_ids(beamerBotId) #gets list of userIds beamerbot is following
+    with open('db/lastmention.txt', 'r') as f:
+        lastId = long(f.read().strip())
+    mentions = api.mentions_timeline(since_id=lastId, count=200)
+    if len(mentions) == 0:
+        return
+    mostRecent = mentions[0].id
+    mentions = filter(lambda x: x.text[:11].upper() == "@BEAMERBOT ", mentions)
+    #filter for responding to latest tweet 
+     
+    #actual processing (in posting order)
+    for mention in reversed(mentions):
+        print "----------------------------"
+        print "mentiontext", mention.text
+        print "alreadyguessed", alreadyGuessed
+        print "mention author", mention.author.screen_name
+        text = mention.text[11:].split()
+        names = filter(lambda x: x.startswith("@"), text)
+        if len(names) > 0:
+            if roundOver:
+                #sorry, alreadyGuessed[0] already won!
+                #STATS
+                print 1
+                continue
+            if mention.author.screen_name in alreadyGuessed:
+                #sorry, only one guess per round!
+                #STATS
+                print 2
+                continue
 
+            guess = names[0][1:]
+            if guess.upper() == currentFriend.upper():
+                #you win
+                #STATS
+                print 3
+                alreadyGuessed = [mention.author.screen_name]
+                roundOver = True
+            else:
+                #you guessed wrong!
+                #STATS
+                print 4
+                alreadyGuessed.append(mention.author.screen_name)
+        else:
+            print 0
+            
+
+
+
+    with open('db/lastmention.txt', 'w') as f:
+        f.write(str(mostRecent))
 
 #initializeDB()
 #updateTweets()
-#generateTweet()
+generateTweet()
 
-
-    
+while(raw_input("anything to process tweets, exit to exit: ") != "exit"):
+    processMentions()
     
     
     
