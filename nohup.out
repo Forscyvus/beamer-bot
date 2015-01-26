@@ -1,0 +1,1034 @@
+Exception in thread Thread-44:
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/threading.py", line 810, in __bootstrap_inner
+    self.run()
+  File "/usr/lib/python2.7/threading.py", line 1082, in run
+    self.function(*self.args, **self.kwargs)
+  File "./beamerBot.py", line 167, in generateTweet
+    print currentFriend, tweet
+UnicodeEncodeError: 'ascii' codec can't encode character u'\u201d' in position 115: ordinal not in range(128)
+
+generating Tweet
+Nixon_Corral @.BreetzTweetz I a shitty HDR picture that the 3DS XL be a little a few pegs. may have fanbase on agree. Great game.
+Forscyvus @.KeattzTweetz hey u do u bb 6
+--------------
+Forscyvus @.KeattzTweetz (is it magic online) 5
+--------------
+Forscyvus @.KeattzTweetz what game 3
+--------------
+Forscyvus @.Forscyvus i am very excited 5
+--------------
+Forscyvus BEAMERBOT IS RUNNING, EVERYONE
+
+I
+
+D
+I
+D
+
+I
+T 10
+--------------
+processMentions Called
+no replies
+processMentions Called
+----------------------------
+mentiontext @BeamerBot and the first one after a crash is me i think @Forscyvus
+alreadyguessed []
+mention author Forscyvus
+4
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+generating Tweet
+no replies
+helenptech @.heysarahgraham The most way to tell who reads MTMTE
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+generating Tweet
+no replies
+openrhodes I bet my coworkers think I'm what song smfh who do a new mixer, up and start eating a set of all beautiful melodic
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+generating Tweet
+no replies
+openrhodes dang neighbors party these glitches and ass feel sexy
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+generating Tweet
+no replies
+lellercopter
+claireehanson Worrying about these admission decisions and smallpox #agirlcandream #IBProblems
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+generating Tweet
+no replies
+mjmoriarity @.drewmck @.pivotaltracker Nice!
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+generating Tweet
+no replies
+Space_Alexander @.Forscyvus @.Nixon_Corral @.xXxN0831xXx at work?
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+generating Tweet
+no replies
+MuthafuckaMike @.broadcastbs This has of you are jahjakldhf jakdfja #french
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+generating Tweet
+no replies
+Bravopsiu Managed to make it to my guess.
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+generating Tweet
+no replies
+jking31cs I also discovered that if I get fly by so I can be at
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+generating Tweet
+no replies
+LordofGodKings The Purge: pulled you up if you did Junglr
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+generating Tweet
+no replies
+Bravopsiu @.xXxN0831xXx You from California but shouldn't those wires not cross? And and walked upstairs. running tonight?
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+generating Tweet
+no replies
+lellercopter
+LordofGodKings I always the odds of why the took out something with the entire Jeremiahbot
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+generating Tweet
+no replies
+lellercopter
+RandoMcGee @.LilCoolJu it's a very sensitive matter, out. Gotta play it
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+generating Tweet
+no replies
+myipodispsychic @.openrhodes A horde of of those one?
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+generating Tweet
+no replies
+solitonfission i'd be the bacon is expiring! gotta eat like "yep this you for 5 years my resolve
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+generating Tweet
+no replies
+Bravopsiu Physics sucks. Prof laying down truth.
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+generating Tweet
+no replies
+lbr218 @.Farcethemusic if I'm sorry I
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+generating Tweet
+no replies
+openrhodes @.openrhodes definitely remember any to let me copy in a full
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+generating Tweet
+no replies
+xXxN0831xXx Do ties require washing?
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+----------------------------
+mentiontext @BeamerBot @Bravopsiu
+alreadyguessed []
+mention author BreetzTweetz
+4
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+generating Tweet
+no replies
+mjmoriarity Incredibly proud to be a part of
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+----------------------------
+mentiontext @BeamerBot @LilCoolJu
+alreadyguessed []
+mention author BreetzTweetz
+4
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+generating Tweet
+no replies
+deathsatchel @.openrhodes I got some moves I throw it away in a albums only, no rereleases, ok thx night!
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+generating Tweet
+no replies
+BIGGGBACON A little less than 12 worlds out
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+all filtered away
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+generating Tweet
+no replies
+xXxN0831xXx Having the notion that seems like you don't make logical bus. Aww releasing a new album in a couple so I don't have a finalized opinion
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+----------------------------
+mentiontext @BeamerBot me?
+alreadyguessed []
+mention author myipodispsychic
+0
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+generating Tweet
+no replies
+lellercopter
+myipodispsychic Well apparently I'm unbearable I don't know what to do that's totally how that works.
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+generating Tweet
+no replies
+lbr218 "it's not those new #SlipperyRock I can get send my fb friends any of brand new (old) #Parker51!
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+generating Tweet
+no replies
+AlbinoOcelot I made an tank and some fire-belly salamanders keep making pointless laws unappealing by putting way more food
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+----------------------------
+mentiontext @BeamerBot @AlbinoOcelot !
+alreadyguessed []
+mention author AlbinoOcelot
+3
+processMentions Called
+----------------------------
+mentiontext @BeamerBot @AlbinoOcelot !
+alreadyguessed [u'AlbinoOcelot']
+mention author AlbinoOcelot
+1
+processMentions Called
+generating Tweet
+no replies
+MuthafuckaMike @.broadcastbs Nobel, A weasel hath not Bullshit, can, be, when, you, put, and watching SSB a fag.
+processMentions Called
+----------------------------
+mentiontext @BeamerBot gotta be @MuthafuckaMike
+alreadyguessed []
+mention author Forscyvus
+3
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+all filtered away
+processMentions Called
+no replies
+processMentions Called
+all filtered away
+processMentions Called
+no replies
+processMentions Called
+all filtered away
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+generating Tweet
+no replies
+BIGGGBACON @.LilCoolJu @.WngdDragonOfRaw it's not a matter of fucking over of having cable
+processMentions Called
+no replies
+processMentions Called
+----------------------------
+mentiontext @BeamerBot @myipodispsychic
+alreadyguessed []
+mention author LilCoolJu
+4
+processMentions Called
+all filtered away
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+----------------------------
+mentiontext @BeamerBot @BreetzTweetz maybe it's breet
+alreadyguessed [u'LilCoolJu']
+mention author Forscyvus
+4
+processMentions Called
+----------------------------
+mentiontext @BeamerBot @LilCoolJu ???????
+alreadyguessed [u'LilCoolJu', u'Forscyvus']
+mention author myipodispsychic
+4
+processMentions Called
+all filtered away
+processMentions Called
+generating Tweet
+no replies
+LordofGodKings Yippie-ki-yay, Mr. Falcon.
+processMentions Called
+----------------------------
+mentiontext @BeamerBot @Nixon_Corral
+alreadyguessed []
+mention author LilCoolJu
+4
+processMentions Called
+all filtered away
+processMentions Called
+----------------------------
+mentiontext @BeamerBot @BreetzTweetz BREETZ BREETZ BREETZ BREETZ BREEEETZ
+alreadyguessed [u'LilCoolJu']
+mention author myipodispsychic
+4
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+all filtered away
+processMentions Called
+generating Tweet
+no replies
+solitonfission Just read through a *reference advisor
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+all filtered away
+processMentions Called
+----------------------------
+mentiontext @BeamerBot totally @solitonfission
+alreadyguessed []
+mention author Forscyvus
+3
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+generating Tweet
+no replies
+claireehanson People saying SOPA should be passed because relate at all Not even a pig-faced, melodramatic git we can defeat positions and such
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+generating Tweet
+no replies
+lbr218 Fun fact: the #50
+processMentions Called
+----------------------------
+mentiontext @BeamerBot this one's dumb
+alreadyguessed []
+mention author myipodispsychic
+0
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+----------------------------
+mentiontext @BeamerBot @Raxsha
+alreadyguessed []
+mention author LilCoolJu
+4
+processMentions Called
+no replies
+processMentions Called
+all filtered away
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+generating Tweet
+no replies
+LilCoolJu Winter weather/christmas season fills me with this in every context of to let the ocean swallow farts.
+processMentions Called
+no replies
+processMentions Called
+----------------------------
+mentiontext @BeamerBot oh hi @LilCoolJu
+alreadyguessed []
+mention author Forscyvus
+3
+processMentions Called
+all filtered away
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+generating Tweet
+no replies
+RandoMcGee @.deathsatchel sounds awesome... smells horrible
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+generating Tweet
+no replies
+mjmoriarity Just finished Broken Age Act was really them.
+processMentions Called
+----------------------------
+mentiontext @BeamerBot @BreetzTweetz
+alreadyguessed []
+mention author Forscyvus
+4
+processMentions Called
+----------------------------
+mentiontext @BeamerBot @Forscyvus
+alreadyguessed [u'Forscyvus']
+mention author doublebatman
+4
+processMentions Called
+all filtered away
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentions Called
+no replies
+processMentio

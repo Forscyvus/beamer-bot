@@ -23,11 +23,11 @@ currentFriend = ""
 currentTweetId = 0
 beamerBotId = 2865039405
 
-generateTweetInterval = 3540 #59 minutes just because
+generateTweetInterval = 300 #5 minutes
 generateTweetNextCall = time.time()
 processMentionsInterval = 75 #75 seconds
 processMentionsNextCall = time.time()
-updateTweetsInterval = 86400/6 #6 times per day
+updateTweetsInterval = 86400 #1 day
 updateTweetsNextCall = time.time()
 
 def initializeDB():
@@ -102,7 +102,6 @@ def generateTweet():
     print "generating Tweet"
     db = sqlite3.connect('db/db')
     cursor = db.cursor()
-    previousFriend = currentFriend
     try:
         friends = api.friends_ids(beamerBotId) #gets list of userIds beamerbot is following
         friend = api.get_user(random.choice(friends))
@@ -112,18 +111,16 @@ def generateTweet():
         generateTweetNextCall += generateTweetInterval
         threading.Timer(generateTweetNextCall - time.time(), generateTweet).start()
         return
-    try:
-        if not roundOver and not firstTime:
-            api.update_status("Nobody got it! It was @" + previousFriend, in_reply_to_status_id = currentTweetId)
-        elif firstTime:
-            pass
-        else:
-            api.update_status("The winner is @." + alreadyGuessed[0] + "! The mystery tweeter was @." + previousFriend)
-    except:
-        print "lellercopter"
+    if not roundOver and not firstTime:
+        api.update_status("Nobody got it! It was @" + currentFriend, in_reply_to_status_id = currentTweetId)
+    elif firstTime:
+        pass
+    else:
+        api.update_status("The winner as @" + alreadyGuessed[0] + "! The mystery tweeter was @." + currentFriend)
     alreadyGuessed = []
     roundOver = False
     firstTime = False
+    
 
     tweet = ""
     currentLength = 0
@@ -159,11 +156,8 @@ def generateTweet():
             currentLength = 0
             nextChunk = random.randint(2,7)
             stillBuilding = True
-    try:
-        currentTweetId = api.update_status(tweet).id
-    except:
-        currentTweetId = -1
-        print "loleleol"
+
+    currentTweetId = api.update_status(tweet).id
     print currentFriend, tweet
     cursor.close()
     generateTweetNextCall += generateTweetInterval
@@ -171,10 +165,9 @@ def generateTweet():
 
 def processMentions():
     global currentFriend, currentTweetId, alreadyGuessed, roundOver, processMentionsNextCall
-    db = sqlite3.connect('db/db')
-    cursor = db.cursor()
     print "processMentions Called"
     try:
+        friends = api.friends_ids(beamerBotId) #gets list of userIds beamerbot is following
         with open('db/lastmention.txt', 'r') as f:
             lastId = long(f.read().strip())
         mentions = api.mentions_timeline(since_id=lastId, count=200)
@@ -184,7 +177,6 @@ def processMentions():
         threading.Timer( processMentionsNextCall - time.time(), processMentions ).start()
         return
     if len(mentions) == 0:
-        print "no replies"
         processMentionsNextCall += processMentionsInterval
         threading.Timer( processMentionsNextCall - time.time(), processMentions ).start()
         return
@@ -192,8 +184,6 @@ def processMentions():
     mentions = filter(lambda x: x.text[:11].upper() == "@BEAMERBOT ", mentions)
     mentions = filter(lambda x: x.in_reply_to_status_id == currentTweetId, mentions) 
     #actual processing (in posting order)
-    if len(mentions) == 0:
-        print "all filtered away"
     for mention in reversed(mentions):
         print "----------------------------"
         print "mentiontext", mention.text
@@ -201,86 +191,53 @@ def processMentions():
         print "mention author", mention.author.screen_name
         text = mention.text[11:].split()
         names = filter(lambda x: x.startswith("@"), text)
-        try:
-            if len(names) > 0:
-                if roundOver:
-                    print 1
-                    if mention.author.screen_name == alreadyGuessed[0]:
-                        api.update_status("@" + mention.author.screen_name + " look you already got it stop guessing.", in_reply_to_status_id = mention.id) 
-                    else:
-                        api.update_status("@" + mention.author.screen_name + " sorry, " + alreadyGuessed[0] + " already won! The mystery tweeter was " + currentFriend + "!", in_reply_to_status_id = mention.id)
-                    #STATS
-                    continue
-                if mention.author.screen_name in alreadyGuessed:
-                    print 2
-                    api.update_status("@" + mention.author.screen_name + " sorry, you can only guess once per round!", in_reply_to_status_id = mention.id)
-                    #STATS
-                    continue
-
-                guess = names[0][1:]
-                if guess.upper() == currentFriend.upper():
-                    query = """SELECT wins
-                                 FROM players
-                                WHERE id = ?"""
-                    cursor.execute(query, (mention.author.id,))
-                    score = cursor.fetchone()
-                    if score == None:
-                        query = """INSERT INTO players(id, wins, losses)
-                                        VALUES(?,?,?)"""
-                        cursor.execute(query, (mention.author.id, 1, 0))
-                        score = 1
-                    else:
-                        score = score[0]+1
-                        query = """UPDATE players
-                                      SET wins = ?
-                                    WHERE id = ?"""
-                        cursor.execute(query, (score, mention.author.id))
-                    print 3
-                    api.update_status("@" + mention.author.screen_name + " you got it! You win the round. This is win #" + str(score) + " for you.", in_reply_to_status_id = mention.id)
-                    #STATS
-                    alreadyGuessed = [mention.author.screen_name]
-                    roundOver = True
+        if len(names) > 0:
+            if roundOver:
+                if mention.author.screen_name == alreadyGuessed[0]:
+                    api.update_status("@" + mention.author.screen_name + " look you already got it stop guessing.", in_reply_to_status_id = mention.id) 
                 else:
-                    query = """SELECT losses
-                                 FROM players
-                                WHERE id = ?"""
-                    cursor.execute(query, (mention.author.id,))
-                    score = cursor.fetchone()
-                    if score == None:
-                        query = """INSERT INTO players(id, wins, losses)
-                                        VALUES(?,?,?)"""
-                        cursor.execute(query, (mention.author.id, 0, 1))
-                        score = 1
-                    else:
-                        score = score[0]+1
-                        query = """UPDATE players
-                                      SET losses = ?
-                                    WHERE id = ?"""
-                        cursor.execute(query, (score, mention.author.id))
-                    print 4
-                    api.update_status("@" + mention.author.screen_name + " nope, that's not it. Try again next round! This is loss #" + str(score) + " for you.", in_reply_to_status_id = mention.id)
-                    #STATS
-                    alreadyGuessed.append(mention.author.screen_name)
+                    api.update_status("@" + mention.author.screen_name + " sorry, " + alreadyGuessed[0] + " already won! The mystery tweeter was " + currentFriend + "!", in_reply_to_status_id = mention.id)
+                #STATS
+                print 1
+                continue
+            if mention.author.screen_name in alreadyGuessed:
+                api.update_status("@" + mention.author.screen_name + " sorry, you can only guess once per round!", in_reply_to_status_id = mention.id)
+                #STATS
+                print 2
+                continue
+
+            guess = names[0][1:]
+            if guess.upper() == currentFriend.upper():
+                api.update_status("@" + mention.author.screen_name + " you got it! You win the round.", in_reply_to_status_id = mention.id)
+                #STATS
+                print 3
+                alreadyGuessed = [mention.author.screen_name]
+                roundOver = True
             else:
-                print 0
-        except tweepy.TweepError as e:
-            print e
+                #you guessed wrong
+                api.update_status("@" + mention.author.screen_name + " nope, that's not it. Try again next round!", in_reply_to_status_id = mention.id)
+                #STATS
+                print 4
+                alreadyGuessed.append(mention.author.screen_name)
+        else:
+            print 0
+            
 
 
 
     with open('db/lastmention.txt', 'w') as f:
         f.write(str(mostRecent))
-    db.commit()
-    cursor.close()
+
     processMentionsNextCall += processMentionsInterval
     threading.Timer( processMentionsNextCall - time.time(), processMentions ).start()
 
      
 
-#initializeDB()
-threading.Timer(5, updateTweets).start()
-threading.Timer(22, processMentions).start()
-generateTweet()
+initializeDB()
+#updateTweets()
+
+#processMentions()
+#generateTweet()
 
 
 
